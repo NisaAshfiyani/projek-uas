@@ -10,18 +10,18 @@ package projeck_uas;
  * @author HP
  */
 public class Binarytree {
-    treenode root;
+    TreeeNode root;
  public boolean isEmpty(){
  return (root==null);
  }
  //method insert data
- public void insert(treenode input) {
+ public void insert(TreeeNode input) {
  if (isEmpty()) {
  root = input;
  } else {
  // cari parent yg sesuai dan (kiri/kanan)
- treenode current = root;
- treenode parent = null;
+ TreeeNode current = root;
+ TreeeNode parent = null;
  boolean diKiri = true;
  while (current != null) {
  parent = current;
@@ -57,21 +57,21 @@ diKiri = true;
  postOrder(root);
  }
 
- public void preOrder(treenode akar){
+ public void preOrder(TreeeNode akar){
 if(akar != null){
  System.out.print(akar.data+" ");
  preOrder(akar.left);
  preOrder(akar.right);
 }
  }
- public void inOrder(treenode akar){
+ public void inOrder(TreeeNode akar){
 if(akar != null){
  inOrder(akar.left);
  System.out.print(akar.data+" ");
  inOrder(akar.right);
 }
  }
- public void postOrder(treenode akar){
+ public void postOrder(TreeeNode akar){
 if(akar != null){
  postOrder(akar.left);
  postOrder(akar.right);
@@ -79,9 +79,9 @@ if(akar != null){
 }
  }
  //method mencari data
- public treenode search(int key) {
- treenode node = null;
- treenode current = root;
+ public TreeeNode search(int key) {
+ TreeeNode node = null;
+ TreeeNode current = root;
  // lakukan pencarian selama current bukan null
  while (current != null) {
  if (current.data == key) {
